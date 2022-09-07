@@ -18,11 +18,20 @@ module.exports = () => {
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
+      new HtmlWebpackPlugin([
+        template: './index.js',
+        title: 'Jate',
+      ]),
       
     ],
 
     module: {
       rules: [
+        {
+          test: /\.css$/i,
+          use: ['sty;e-loader', 'css-loader'],
+
+        }
         
       ],
     },
